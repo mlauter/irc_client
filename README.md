@@ -7,4 +7,4 @@ A barebones irc client in python
 Dependencies
 ------------
 
-*python 3+
+* python 3+
