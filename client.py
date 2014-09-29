@@ -72,6 +72,7 @@ class IRCProtocol(asyncio.Protocol):
 
             if data.find('PING') != -1:
                 self.trans.write(str.encode('PONG %s' % data[5:]))
+                print('PONG %s' % data[5:])
 
     def connection_lost(self, exc):
         print("Connection lost!!")
