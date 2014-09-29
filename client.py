@@ -21,9 +21,12 @@ def translate(msg):
             raise Exception("not enough arguments")
         else:
             return 'PRIVMSG ' + ' '.join(msg) + '\r\n'
-            
+
     elif cmd == '/leave':
-        pass
+        if len(msg) == 1:
+            raise Exception("not enough arguments")
+        else:
+            return 'PART ' + ' '.join(msg) +'\r\n'
     elif cmd == '/whois':
         pass
     else:
