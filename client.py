@@ -28,7 +28,10 @@ def translate(msg):
         else:
             return 'PART ' + ' '.join(msg) +'\r\n'
     elif cmd == '/whois':
-        pass
+        if len(msg) < 1:
+            raise Exception("not enough arguments")
+        else:
+            return 'WHOIS ' + ' '.join(msg) +'\r\n'
     else:
         raise Exception("unknown command")
 
