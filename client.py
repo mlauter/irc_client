@@ -17,10 +17,11 @@ def translate(msg):
             return 'JOIN ' + channel + '\r\n' 
 
     elif cmd == '/msg':
+        target = msg[0]
         if len(msg) == 1:
             raise Exception("not enough arguments")
         else:
-            return 'PRIVMSG ' + ' '.join(msg) + '\r\n'
+            return 'PRIVMSG ' + target + ' :' + ' '.join(msg[1:]) + '\r\n'
 
     elif cmd == '/leave':
         if len(msg) < 1:
