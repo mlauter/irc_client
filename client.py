@@ -23,7 +23,7 @@ def translate(msg):
             return 'PRIVMSG ' + ' '.join(msg) + '\r\n'
 
     elif cmd == '/leave':
-        if len(msg) == 1:
+        if len(msg) < 1:
             raise Exception("not enough arguments")
         else:
             return 'PART ' + ' '.join(msg) +'\r\n'
